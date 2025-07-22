@@ -9,12 +9,14 @@ void	recursive_combn(char *string, int index, int n)
 		if (string[0] != '9' - n + 1)
 			write(1, ", ", 2);
 	}
-
+	else
+	{
 	string[index] = string[index - 1] + 1;
 	while (string[index] <= '9')
 	{
 		recursive_combn(string, index + 1, n);
 		string[index]++;
+	}
 	}
 }
 
@@ -29,6 +31,6 @@ void	ft_print_combn(int n)
 
 int	main(void)
 {
-	ft_print_combn(5);
+	ft_print_combn(3);
 	return (0);
 }
